@@ -30,7 +30,7 @@ class Game
 
   def cats_game
     puts ""
-    puts "\u001b[33mCAT'S GAME!"
+    puts "   \u001b[33mCAT'S GAME!"
     puts ""
     puts "#{board.display} \u001b[37m"
     sleep(3)
