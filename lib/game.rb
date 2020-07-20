@@ -49,11 +49,11 @@ class Game
 
   def congratulate_winner
     puts ""
-    puts "\u001b[31mCONGRATULATIONS #{winner}!"
+    puts "\u001b[31mCONGRATULATIONS #{winner}!\u001b[37m"
     puts ""
-    puts"   YOU'VE WON!"
+    puts"\u001b[33m   YOU'VE WON!\u001b[37m"
     puts ""
-    puts "#{board.display} \u001b[37m"
+    puts "\u001b[31m#{board.display} \u001b[37m"
     sleep(3)
   end
 
