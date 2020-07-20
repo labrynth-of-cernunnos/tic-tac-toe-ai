@@ -34,31 +34,6 @@ describe "Board" do
     end
   end
 
-  describe '#display' do
-    it 'prints the board' do
-      board.cells = ["X", "X", "X", "X", "O", "O", "X", "O", "O"]
-
-      output = capture_puts{ board.display }
-
-      expect(output).to include(" X | X | X ")
-      expect(output).to include("-----------")
-      expect(output).to include(" X | O | O ")
-      expect(output).to include("-----------")
-      expect(output).to include(" X | O | O ")
-
-
-      board.cells = ["X", "O", "X", "O", "X", "X", "O", "X", "O"]
-
-      output = capture_puts{ board.display }
-
-      expect(output).to include(" X | O | X ")
-      expect(output).to include("-----------")
-      expect(output).to include(" O | X | X ")
-      expect(output).to include("-----------")
-      expect(output).to include(" O | X | O ")
-    end
-  end
-
   describe '#position' do
     it 'takes in user input and returns the value of the board cell' do
       board.cells = ["O", " ", " ", " ", "X", " ", " ", " ", "X"]
@@ -122,7 +97,7 @@ describe "Board" do
       player = double("player", :token => "X")
 
       board.update("1", player)
-      expect(board.position("1")).to eq("X")
+      expect(board.position("1")).to eq("\e[31mX\e[37;1m")
     end
   end
 end
