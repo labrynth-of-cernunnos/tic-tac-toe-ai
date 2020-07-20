@@ -68,6 +68,7 @@ class Game
     player = current_player
     select_move(player)
     board.display
+    sleep(1) if player.class == Players::Computer
     board_move = player.move(board)
 
     if board.valid_move?(board_move)

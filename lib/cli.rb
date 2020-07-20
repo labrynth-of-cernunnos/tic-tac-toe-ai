@@ -52,8 +52,7 @@ class Cli
 
   def another_round
     puts ""
-    # When the game is over, the CLI should prompt the user if they would like to play again
-    puts "Would you like to play again? \u001b[31mX\u001b[37m?  \u001b[32myes \u001b[37m/ \u001b[31mno \u001b[37m "
+    puts "Would you like to play again?  \u001b[32myes \u001b[37m/ \u001b[31mno \u001b[37m "
     user_says = gets.strip.downcase
 
     if user_says == 'no'
@@ -71,7 +70,7 @@ class Cli
   def say_goodbye
     sleep(1)
     puts ""
-    puts "Until next time."
-    puts "End of line"
+    puts "\u001b[31mUntil next time!\u001b[37m"
+    puts "\u001b[32mEnd of line \u001b[37m"
   end
 end
