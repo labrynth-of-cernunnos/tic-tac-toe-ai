@@ -7,7 +7,7 @@ module Players
     end
 
     def move(board)
-      puts "Please select your square: 1- 9"
+      puts "\u001b[34mPlease select your square: 1- 9\u001b[37;1m"
       gets.chomp
     end
   end

@@ -13,7 +13,7 @@ class Game
   end
 
   def select_move(player)
-    puts "Player \u001b[31m#{player.token}\u001b[37;1m please select your move"
+    puts "\u001b[34mPlayer\u001b[37;1m \u001b[31m#{player.token}\u001b[37;1m \u001b[34mplease select your move\u001b[37;1m"
     puts ""
   end
 
