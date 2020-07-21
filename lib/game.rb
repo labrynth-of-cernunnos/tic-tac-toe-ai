@@ -13,7 +13,7 @@ class Game
   end
 
   def select_move(player)
-    puts "\u001b[34mPlayer\u001b[37;1m \u001b[31m#{player.token}\u001b[37;1m \u001b[34mplease select your move\u001b[37;1m"
+    puts "Player ".light_blue + "#{player.token}" + " please select your move".light_blue
     puts ""
   end
 
@@ -30,9 +30,9 @@ class Game
 
   def cats_game
     puts ""
-    puts "   \u001b[33mCAT'S GAME!"
+    puts "   CAT'S GAME!",light_yellow
     puts ""
-    puts "#{board.display} \u001b[37m"
+    puts "#{board.display}"
     sleep(3)
   end
 
@@ -49,17 +49,17 @@ class Game
 
   def congratulate_winner
     puts ""
-    puts "\u001b[31mCONGRATULATIONS #{winner}!\u001b[37m"
+    puts "CONGRATULATIONS #{winner}".light_red
     puts ""
-    puts"\u001b[33m   YOU'VE WON!\u001b[37m"
+    puts"   YOU'VE WON!".light_yellow
     puts ""
-    puts "\u001b[31m#{board.display} \u001b[37m"
+    puts "#{board.display}"
     sleep(3)
   end
 
   def invalid_move
     puts ""
-    puts "\u001b[33m Invalid Move \u001b[37m"
+    puts "Invalid Move".light_red
     puts ""
     sleep(1)
   end

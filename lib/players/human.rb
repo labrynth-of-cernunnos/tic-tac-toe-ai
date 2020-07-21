@@ -1,3 +1,5 @@
+require 'colorize'
+
 module Players
   class Human < Player
     attr_reader :token
@@ -7,7 +9,7 @@ module Players
     end
 
     def move(board)
-      puts "\u001b[34mPlease select your square: 1- 9\u001b[37;1m"
+      puts "Please select your square: 1- 9".light_blue
       gets.chomp
     end
   end

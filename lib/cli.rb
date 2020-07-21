@@ -7,33 +7,33 @@ class Cli
 
   def greet_user
     system "clear"
-    puts "\u001b[31mWELCOME TO TIC TAC TOE WITH AI!"
+    puts "WELCOME TO TIC TAC TOE WITH AI!".red
     sleep(1)
   end
 
   def player_number
     puts ""
-    puts "\u001b[34;1mPlease select the number of players: \u001b[33;1m 0, \u001b[31m 1, \u001b[37;1m or \u001b[34;1m 2 \u001b[37;1m"
+    puts "Please select the number of players: ".light_blue + " 0".light_yellow + "," + " 1".light_red + "," + "or" + " 2".light_blue
     puts ""
     gets.strip
   end
 
   def first_player
     puts ""
-    puts "\u001b[34mWould you like to be\u001b[37m \u001b[31mX\u001b[37m\u001b[34m?\u001b[37m \u001b[32myes \u001b[37m/ \u001b[31mno \u001b[37m"
+    puts "Would you like to be".light_blue + " X ".light_red + "  yes ".light_green + "/" + " no".light_red
     puts ""
     gets.strip.downcase
   end
 
   def play_x_starts
     puts ""
-    puts "\u001b[34;1mPlayer \u001b[31m X \u001b[34;1m goes first!"
+    puts "Player ".light_blue + "X".light_red + " goes first!".light_blue
     puts ""
   end
 
   def invalid_input
     puts ""
-    puts "\u001b[33mInvalid input \u001b[37m"
+    puts "Invalid input".light_red
     puts ""
     sleep(1)
   end
@@ -52,11 +52,10 @@ class Cli
 
   def another_round
     puts ""
-    puts "\u001b[34mWould you like to play again?\u001b[37m  \u001b[32myes \u001b[37m/ \u001b[31mno \u001b[37m "
+    puts "Would you like to play again?" + "   yes ".green + "/" + " no".light_red
     user_says = gets.strip.downcase
 
     if user_says == 'no'
-      #If the user doesn't want to play again, exit the program.
       self.play= "no"
       say_goodbye
     elsif user_says == 'yes'
@@ -70,7 +69,7 @@ class Cli
   def say_goodbye
     sleep(1)
     puts ""
-    puts "\u001b[31mUNTIL NEXT TIME!\u001b[37m"
-    puts "\u001b[32mEnd of line \u001b[37m"
+    puts "UNTIL NEXT TIME!".red
+    puts "End of line".green
   end
 end

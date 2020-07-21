@@ -10,7 +10,6 @@ class Board
   end
 
   def display
-    # puts "    \u001b[31m#{cells[0]}\u001b[37;1m | \u001b[31m#{cells[1]}\u001b[37;1m | \u001b[31m#{cells[1]}\u001b[37;1m "
     puts "    #{cells[0]} | #{cells[1]} | #{cells[2]} "
     puts "   -----------"
     puts "    #{cells[3]} | #{cells[4]} | #{cells[5]} "
@@ -48,6 +47,6 @@ class Board
   end
 
   def colorize_token(player)
-    player.token == 'X' ? "\u001b[31mX\u001b[37;1m" : "\u001b[33mO\u001b[37;1m"
+    player.token == 'X' ? "X".light_red : "O".light_yellow
   end
 end
