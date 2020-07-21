@@ -234,7 +234,7 @@ describe 'Game' do
 
       game.play
 
-      expect(game.board.cells).to eq(["\e[31mX\e[37;1m", " ", " ", " ", " ", " ", " ", " ", " "])
+      expect(game.board.cells).to eq(["\e[0;91;49mX\e[0m", " ", " ", " ", " ", " ", " ", " ", " "])
     end
 
     it 'plays the first few turns of the game' do
@@ -248,7 +248,7 @@ describe 'Game' do
 
       game.play
 
-      expect(game.board.cells).to eq(["\e[31mX\e[37;1m", "\e[31mX\e[37;1m", " ", "\e[33mO\e[37;1m", " ", " ", " ", " ", " "])
+      expect(game.board.cells).to eq(["\e[0;91;49mX\e[0m", "\e[0;91;49mX\e[0m", " ", "\e[0;93;49mO\e[0m", " ", " ", " ", " ", " "])
     end
 
     it 'checks if the game is won after every turn' do
@@ -290,8 +290,8 @@ describe 'Game' do
       game.board.cells = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
       allow($stdout).to receive(:puts)
 
-      expect($stdout).to receive(:puts).with("\e[31mCONGRATULATIONS X!\e[37m")
-      expect($stdout).to receive(:puts).with("\e[33m   YOU'VE WON!\e[37m")
+      expect($stdout).to receive(:puts).with("\e[0;91;49mCONGRATULATIONS X\e[0m")
+      expect($stdout).to receive(:puts).with("\e[0;93;49m   YOU'VE WON!\e[0m")
 
       game.play
     end
@@ -302,8 +302,8 @@ describe 'Game' do
 
       allow($stdout).to receive(:puts)
 
-      expect($stdout).to receive(:puts).with("\e[31mCONGRATULATIONS O!\e[37m")
-      expect($stdout).to receive(:puts).with("\e[33m   YOU'VE WON!\e[37m")
+      expect($stdout).to receive(:puts).with("\e[0;91;49mCONGRATULATIONS O\e[0m")
+      expect($stdout).to receive(:puts).with("\e[0;93;49m   YOU'VE WON!\e[0m")
 
       game.play
     end
@@ -325,7 +325,7 @@ describe 'Game' do
 
       allow($stdout).to receive(:puts)
 
-      expect($stdout).to receive(:puts).with("   \e[33mCAT'S GAME!")
+      expect($stdout).to receive(:puts).with("\e[0;93;49m   CAT'S GAME!\e[0m")
 
       game.play
     end
@@ -343,8 +343,8 @@ describe 'Game' do
       expect(game.player_1).to receive(:gets).and_return("7")
 
 
-      expect($stdout).to receive(:puts).with("\e[31mCONGRATULATIONS \e[31mX\e[37;1m!\e[37m")
-      expect($stdout).to receive(:puts).with("\e[33m   YOU'VE WON!\e[37m")
+      expect($stdout).to receive(:puts).with("\e[0;91;49mCONGRATULATIONS \e[0m\e[0;91;49mX\e[0m")
+      expect($stdout).to receive(:puts).with("\e[0;93;49m   YOU'VE WON!\e[0m")
 
       game.play
     end

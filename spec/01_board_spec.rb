@@ -97,7 +97,7 @@ describe "Board" do
       player = double("player", :token => "X")
 
       board.update("1", player)
-      expect(board.position("1")).to eq("\e[31mX\e[37;1m")
+      expect(board.position("1")).to eq("\e[0;91;49mX\e[0m")
     end
   end
 end

@@ -30,7 +30,7 @@ class Game
 
   def cats_game
     puts ""
-    puts "   CAT'S GAME!",light_yellow
+    puts "   CAT'S GAME!".light_yellow
     puts ""
     puts "#{board.display}"
     sleep(3)
